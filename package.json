@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "@netlify/functions": "^1.4.0"
+  },
+  "name": "hex-color-guesser",
+  "description": "How many colors can you guess?! Try it out on [netlify](https://candid-tarsier-724246.netlify.app).",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markusheiss/hex-color-guesser.git"
+  },
+  "author": "Markus Heiss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markusheiss/hex-color-guesser/issues"
+  },
+  "homepage": "https://github.com/markusheiss/hex-color-guesser#readme"
+}
