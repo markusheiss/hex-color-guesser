@@ -2,10 +2,17 @@
 const app = document.querySelector('.app')! as HTMLElement;
 const btns = document.querySelectorAll('.btn');
 const btnNewGame = document.querySelector('.btn--new-game')! as HTMLElement;
+const outerContainer = document.querySelector(
+  '.container-color--outer'
+)! as HTMLElement;
 const colorContainer = document.querySelector(
   '.container-color--inner'
 )! as HTMLElement;
 const healthEl = document.querySelector('.hp')!;
+// modal elements
+const btnCloseModal = document.querySelector('.btn-close-modal')!;
+const modal = document.querySelector('.modal')!;
+const overlay = document.querySelector('.overlay')!;
 
 // Game variables
 const initialHealth = 10;
@@ -48,7 +55,18 @@ const handleHealth = function () {
 
 const handleCorrect = function () {
   guessedCorrect += 1;
-  resetButtons();
+  app.classList.add('correct');
+  setTimeout(() => {
+    app.classList.remove('correct');
+    resetButtons();
+  }, 300);
+};
+
+const handleFalse = function () {
+  handleHealth();
+
+  app.classList.add('false');
+  setTimeout(() => app.classList.remove('false'), 300);
 };
 
 const handleButtonClick = function (e: Event) {
@@ -65,7 +83,7 @@ const handleButtonClick = function (e: Event) {
   ) {
     targetEl.classList.add('false');
     health -= 1;
-    handleHealth();
+    handleFalse();
   }
 };
 
@@ -74,6 +92,11 @@ const newGame = function () {
   gameOver = false;
   handleHealth();
   resetButtons();
+};
+
+const closeModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
 };
 
 // adds eventlisteners to buttons
@@ -88,6 +111,9 @@ const initButtons = function () {
     handleButtonVisibility();
     newGame();
   });
+
+  btnCloseModal.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
 
   resetButtons();
 };

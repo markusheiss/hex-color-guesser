@@ -9,6 +9,7 @@ html {
 
 body {
   background-color: #212529;
+  color: #343a40;
   font-family: 'Rubik', sans-serif;
 }
 
@@ -17,6 +18,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding: 2.4rem;
 }
 
 .hp {
@@ -41,10 +43,10 @@ body {
   justify-content: center;
   align-items: center;
   gap: 2.4rem;
-  background-color: #f1f3f5;
-  width: 50rem;
+  background-color: #e9ecef;
+  max-width: 48rem;
   border-radius: 8px;
-  padding: 4.8rem;
+  padding: 2.4rem;
 }
 
 .container-color--inner {
@@ -56,7 +58,7 @@ body {
 .btn-list {
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1.2rem;
   list-style: none;
   width: 100%;
 }
@@ -66,13 +68,14 @@ body {
   border: none;
   cursor: pointer;
   background-color: #adb5bd;
-  color: #000;
+  color: #343a40;
   font-size: 1.8rem;
   font-weight: 600;
   padding: 1.2rem 2.4rem;
   border-radius: 8px;
   transition: 0.3s;
 }
+
 .btn-list button:hover,
 .btn--new-game:hover {
   background-color: #868e96;
@@ -81,6 +84,52 @@ body {
 .btn.false,
 .btn.false:hover {
   background-color: #e03131;
+}
+
+.false {
+  transition: ease-in 0.1s;
+  background-color: #e03131;
+}
+
+.correct {
+  transition: ease-in 0.05s;
+  background-color: #2f9e44;
+}
+
+.overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  height: 100vh;
+  width: 100%;
+}
+
+.modal {
+  position: absolute;
+  background-color: #f1f3f5;
+  padding: 3.2rem 4.8rem;
+  width: 40rem;
+  height: 20rem;
+  border-radius: 8px;
+  font-size: 1.8rem;
+}
+
+.modal h1 {
+  font-size: 2.4rem;
+}
+
+.modal p {
+  margin-top: 1.8rem;
+  font-size: 1.6rem;
+}
+
+.btn-close-modal {
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  cursor: pointer;
 }
 
 .hidden {
